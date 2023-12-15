@@ -51,9 +51,9 @@ function won(array, sign) {
 
     if(hTop || hMiddle || hBottom || vLeft || vMiddle || vRight || diagonal1 || diagonal2) {
         if(sign == player1sign) {
-            console.log("Player 1 won")
+            alert("Player 1 won")
         } else {
-            console.log("Player 2 won")
+            alert("Player 2 won")
         }
         cubes.forEach(cube => {
             cube.innerHTML = "";
