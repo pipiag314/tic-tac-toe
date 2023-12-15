@@ -35,29 +35,33 @@ cubes.forEach((cube, index) => {
 
 function won(array, sign) {
 
-    const allEqual = arr => arr.every(n => n === sign)
-    
-    const hTop = allEqual(array.slice(0, 3))
-    const hMiddle = allEqual(array.slice(3, 6))
-    const hBottom = allEqual(array.slice(6))
+  const allEqual = arr => arr.every(n => n === sign)
+  
+  const hTop = allEqual(array.slice(0, 3))
+  const hMiddle = allEqual(array.slice(3, 6))
+  const hBottom = allEqual(array.slice(6))
 
-    const vLeft = allEqual([array[0], array[3], array[6]])
-    const vMiddle = allEqual([array[1], array[4], array[7]])
-    const vRight = allEqual([array[2], array[5], array[8]])
+  const vLeft = allEqual([array[0], array[3], array[6]])
+  const vMiddle = allEqual([array[1], array[4], array[7]])
+  const vRight = allEqual([array[2], array[5], array[8]])
 
-    const diagonal1 = allEqual([array[0], array[4], array[8]])
-    const diagonal2 = allEqual([array[2], array[4], array[6]])
+  const diagonal1 = allEqual([array[0], array[4], array[8]])
+  const diagonal2 = allEqual([array[2], array[4], array[6]])
 
 
-    if(hTop || hMiddle || hBottom || vLeft || vMiddle || vRight || diagonal1 || diagonal2) {
-        if(sign == player1sign) {
+  if(hTop || hMiddle || hBottom || vLeft || vMiddle || vRight || diagonal1 || diagonal2) {
+      if(sign == player1sign) {
+          setTimeout(() => {
             alert("Player 1 won")
-        } else {
+          }, 10)
+      } else {
+          setTimeout(() => {
             alert("Player 2 won")
-        }
-        cubes.forEach(cube => {
-            cube.innerHTML = "";
-        })
-        enteredSigns = [...Array(9)]
-    }
+          }, 10)
+      }
+      cubes.forEach(cube => {
+          cube.innerHTML = "";
+      })
+      enteredSigns = [...Array(9)]
+  }
 }
